@@ -1,7 +1,7 @@
 #batch.js
 batch.js is a Node.js module that defines the Batch object.
 
-##High Level Overview 
+##High-level overview 
 Batch is essentially an object that holds an animation frame and an array of jobs to be performed which may or may not change the animation frame.
 
 Jobs can be added with `Batch.queue` (or `Batch.add` if the job requires arguments or should not be run immediately). Jobs will either be run through `Batch.sync`, which will be listening for new jobs in `Batch.jobs`, or they will be run via `Batch.request_frame`, if `Batch.sync` is undefined or otherwise false.
