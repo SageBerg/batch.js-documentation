@@ -13,22 +13,22 @@ Jobs can be added with `Batch.queue` (or `Batch.add` if the job requires argumen
 
 ##Batch methods:
 ###queue(fn)
-Runs the function `fn` and all other functions in `Batch.jobs`.
+* Runs the function `fn` and all other functions in `Batch.jobs`.
 
 ###request_frame()
-Has no effect if `Batch.frame` is defined, otherwise it assigns `Batch.frame`.
+* Has no effect if `Batch.frame` is defined, otherwise it assigns `Batch.frame`.
 
 ###run()
-Runs all jobs in `Batch.jobs` and clears `Batch.jobs`.
+* Runs all jobs in `Batch.jobs` and clears `Batch.jobs`.
 
 ###add(fn)
-Has same effect as `Batch.queue`, but returns a function which you can pass arguments to, whereas `Batch.queue` does not support arguments. This function can also be called at a later time.
+* Has same effect as `Batch.queue`, but returns a function which you can pass arguments to, whereas `Batch.queue` does not support arguments. This returned function can also be called at a later time.
 
 ##Other functions:
 ###requestAnimationFrame(callback)
-`requestAnimationFrame` looks in the Node.js global namespace for several different functions that request animation frames, defaulting to an in-lined function `timeout` which calls the callback (usually `Batch.run`) after a 60th of a second. This delay can enforce a 60 fps frame rate for an animation.
+* Looks in the Node.js global namespace for several different functions that request animation frames, defaulting to an in-lined function `timeout` which calls the callback (usually `Batch.run`) after a 60th of a second. This delay can enforce a 60 fps frame rate for an animation.
 
 ##Notes:
 This code uses a mix of snake_case and camelCase. That is, `Batch` methods are written with underscores between words like `Batch.request_frame` and the extra function `requestAnimationFrame` has no extra characters between words and instead capitalizes the first character of each additional word. This may be an intentional choice to make object methods look different than functions that are not associated with objects, but camelCase is the preferred convention for JavaScript so some developers might find this choice surprising.
 
-This documentation could alternatively have been written in the batch.js using a library like JSDoc. I chose to write it in markdown, since I like the formatting it provides.
+This documentation could alternatively have been written directly into the batch.js file using a library like JSDoc. Such librarys often provide ways auto-generate docs from the markup in the code. I chose to write this documention in markdown, since I like the formatting it provides.
