@@ -1,6 +1,8 @@
 #batch.js
 batch.js is a Node.js module that defines the Batch object.
 
+batch.js was written by [Michael Hayes](https://github.com/hayes?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93) and can also be found [here](https://gist.github.com/hayes/348246e0060b93077b34).
+
 ##High-level overview 
 Batch is essentially an object that holds an animation frame and an array of jobs to be performed which may or may not change the animation frame.
 
@@ -32,3 +34,4 @@ Jobs can be added with `Batch.queue` (or `Batch.add` if the job requires argumen
 This code uses a mix of snake_case and camelCase. That is, `Batch` methods are written with underscores between words like `Batch.request_frame` and the extra function `requestAnimationFrame` has no extra characters between words and instead capitalizes the first character of each additional word. This may be an intentional choice to make object methods look different than functions that are not associated with objects, but camelCase is the preferred convention for JavaScript so some developers might find this choice surprising.
 
 This documentation could alternatively have been written directly into the batch.js file using a library like JSDoc. Such libraries often provide ways to auto-generate docs from the markup in the code. I chose to write this documentation in markdown, since I like the formatting it provides.
+
